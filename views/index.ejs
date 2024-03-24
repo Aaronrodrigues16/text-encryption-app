@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Encryption/Decryption</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body class="bg-light">
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h1>Text Encryption</h1>
+                <form action="/encrypt" method="POST">
+                    <div class="form-group">
+                        <textarea class="form-control" name="text" placeholder="Enter text to encrypt" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Encrypt</button>
+                </form>
+
+                <% if (encryptedText) { %>
+                    <div class="mt-3">
+                        <h2>Encrypted Text:</h2>
+                        <textarea class="form-control" readonly rows="5"><%= encryptedText %></textarea>
+                    </div>
+                <% } %>
+            </div>
+
+            <div class="col-md-6">
+                <h1>Text Decryption</h1>
+                <form action="/decrypt" method="POST">
+                    <div class="form-group">
+                        <textarea class="form-control" name="text" placeholder="Enter text to decrypt" rows="5"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Decrypt</button>
+                </form>
+
+                <% if (decryptedText) { %>
+                    <div class="mt-3">
+                        <h2>Decrypted Text:</h2>
+                        <textarea class="form-control" readonly rows="5"><%= decryptedText %></textarea>
+                    </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
